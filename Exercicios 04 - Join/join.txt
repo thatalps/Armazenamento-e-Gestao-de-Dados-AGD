@@ -1,0 +1,33 @@
+A) select c.first_name, c.last_name, a.first_name, a.first_name 
+from customer as c 
+left join actor as a 
+on (c.first_name=a.first_name
+and 
+c.last_name=a.last_name);
+
+B)
+select a.first_name, a.last_name, c.first_name, c.last_name from actor as a
+right join customer as c
+on a.first_name=c.first_name 
+and a.last_name=c.last_name;
+
+C) select a.first_name, a.last_name, c.first_name, c.last_name from actor as a
+join customer as c 
+on a.last_name=c.last_name;
+
+D) select city, country 
+from city as c
+left join country as co
+on c.country_id = co.country_id;
+
+E) select f.title, f.description, f.release_year, l.name
+from film as f
+left join language as l
+on f.language_id = l.language_id;
+
+F) select s.first_name, s.last_name, a.address, c.city, a.district, a.postal_code
+from staff as s
+join address as a
+on s.address_id=a.address_id 
+join city as c 
+on a.city_id=c.city_id
