@@ -1,0 +1,26 @@
+A) select titulo 
+from palestra, localizacao 
+where local_fk=id
+and cidade like '%Niterói%';
+
+B) select participante.nome, cpf 
+from participante, inscricao, palestra
+where participante.id=inscricao.participante_fk
+and inscrição.palestra_fk = palestra.id
+and palestra.id = localizacao.id
+where localizacao.cidade like '%Niterói%';
+
+C) select cidade, sum(capacidade)
+from localizacao 
+group by (cidade)
+
+D) select cidade, SUM(capacidade)
+ from localizacao
+ GROUP by (cidade)
+ HAVING sum(capacidade)<3000;
+
+E) select titulo
+from palestra, localizacao
+where local_fk=id
+and cidade like '%Niterói%'
+and duracao_total>=80;
